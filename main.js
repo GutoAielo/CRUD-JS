@@ -74,11 +74,15 @@ const saveStudent = () => {
 }
 // ROWs
 const createRow = (student, index) => {
+  function formatData(date) {
+    let data = new Date(date)
+    return new Intl.DateTimeFormat('pt-BR', { timeZone: 'UTC' }).format(data)
+  }
   const newRow = document.createElement('tr')
   newRow.innerHTML = `
         <td>${student.nome}</td>
         <td>${student.celular}</td>
-        <td>${student.nascimento}</td>
+        <td>${formatData(student.nascimento)}</td>
         <td>${student.nota}</td>
         <td>
             <button type="button" class="button green" id="edit-${index}">Editar</button>
@@ -124,7 +128,7 @@ const editDelete = event => {
       const student = readStudent()[index]
       let avisoDelete = document.querySelector('#avisoDelete')
 
-      avisoDelete.textContent = `Deseja realmente excluir o Aluno ${student.nome}`
+      avisoDelete.textContent = `Deseja realmente excluir o Aluno ${student.nome}?`
       openModal2()
 
       // APAGAR O REGISTRO
