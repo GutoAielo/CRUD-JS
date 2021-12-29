@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link rel="icon" href="./image/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/button.css" />
+    <link rel="stylesheet" href="./css/records.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <title>CRUD JS</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="header-title">Cadastro de Alunos</h1>
+    </header>
+    <main>
+      <button type="button" class="button blue mobile" id="cadastrarAluno">
+        Cadastrar Aluno
+      </button>
+      <table id="tableStudent" class="records">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Celular</th>
+            <th>Nascimento</th>
+            <th>Nota Final</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <!-- MODAL CRIAR E EDITAR -->
+      <div class="modal" id="modal">
+        <div class="modal__modal-content">
+          <header class="modal__modal-content__modal-header">
+            <h2>Novo Aluno</h2>
+            <span
+              class="modal__modal-content__modal-header__modal-close"
+              id="modalClose"
+              >&#10006;</span
+            >
+          </header>
+          <form id="form" class="modal__modal-form">
+            <input
+              type="text"
+              id="nome"
+              data-index="new"
+              class="modal__modal-form__modal-field"
+              placeholder="Nome do Aluno"
+              required
+            />
+            <input
+              type="text"
+              id="celular"
+              class="modal__modal-form__modal-field"
+              placeholder="Celular do Aluno"
+              required
+            />
+            <input
+              type="date"
+              id="date"
+              class="modal__modal-form__modal-field"
+              placeholder="Nascimento do Aluno"
+              required
+            />
+            <input
+              type="text"
+              id="nota"
+              class="modal__modal-form__modal-field"
+              placeholder="Nota Final do Aluno"
+              required
+            />
+          </form>
+          <footer class="modal-footer">
+            <button id="salvar" class="button green">Salvar</button>
+            <button id="cancelar" class="button blue">Cancelar</button>
+          </footer>
+        </div>
+      </div>
+
+      <!-- MODAL APAGAR -->
+      <div class="modal" id="modal2">
+        <div class="modal__modal-content">
+          <header class="modal__modal-content__modal-header">
+            <h2>Excluir Aluno</h2>
+            <span
+              class="modal__modal-content__modal-header__modal-close"
+              id="modalClose2"
+              >&#10006;</span
+            >
+          </header>
+          <div id="avisoDelete">
+            <!-- aviso de delete -->
+          </div>
+          <footer class="modal-footer">
+            <button id="apagar" class="button red">Apagar</button>
+            <button id="cancelar2" class="button blue">Cancelar</button>
+          </footer>
+        </div>
+      </div>
+    </main>
+    <footer class="modal__footer-footer">Colégio Sant´Anna</footer>
+    <script src="main.js" defer></script>
+  </body>
+</html>
